@@ -19,7 +19,7 @@ class Pasien_model extends CI_Model {
         }
         return $this->db->count_all_results('pasien');
     }
-
+    
     public function insert_pasien($data){
         return $this->db->insert('pasien', $data);
     }
@@ -38,9 +38,27 @@ class Pasien_model extends CI_Model {
         return $this->db->update('pasien', $data);
     }
 
+    
     public function get_laporan_pasien($dari, $sampai) {
         $this->db->where('tgl_kunjungan >=', $dari);
         $this->db->where('tgl_kunjungan <=', $sampai);
         return $this->db->get('pasien')->result();
     }
+
+    public function count_by_kategori($tanggal_dari = null, $tanggal_sampai = null)
+{
+    if ($tanggal_dari && $tanggal_sampai) {
+        $this->db->where('tgl_kunjungan >=', $tanggal_dari);
+        $this->db->where('tgl_kunjungan <=', $tanggal_sampai);
+    }
+
+    $this->db->select("
+        COUNT(*) as total,
+        SUM(CASE WHEN kategori = 'Diterima' THEN 1 ELSE 0 END) as diterima,
+        SUM(CASE WHEN kategori = 'Ditolak' THEN 1 ELSE 0 END) as ditolak
+    ");
+    $query = $this->db->get('pasien');
+    return $query->row();
+}
+
 }

@@ -27,6 +27,7 @@ $root="http://".$_SERVER['HTTP_HOST'];
 $root=STR_REPLACE(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 $config['base_url'] = "$root";
 
+
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -37,7 +38,7 @@ $config['base_url'] = "$root";
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------

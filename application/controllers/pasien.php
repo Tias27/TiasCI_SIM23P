@@ -205,16 +205,19 @@ class Pasien extends MY_Controller {
         $this->load->view('templates/footer');
     }
 
+    
     public function cetak_laporan() {
         $tanggal_dari = $this->input->post('tanggal_dari');
         $tanggal_sampai = $this->input->post('tanggal_sampai');
-
+    
         $data['pasien'] = $this->pasien_model->get_laporan_pasien($tanggal_dari, $tanggal_sampai);
+        $data['total'] = $this->pasien_model->count_by_kategori($tanggal_dari, $tanggal_sampai);
         $data['tanggal_dari'] = $tanggal_dari;
         $data['tanggal_sampai'] = $tanggal_sampai;
-
+    
         $this->load->view('templates/header');
         $this->load->view('pasien/laporan_hasil', $data);
         $this->load->view('templates/footer');
     }
+    
 }

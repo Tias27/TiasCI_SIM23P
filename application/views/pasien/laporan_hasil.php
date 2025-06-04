@@ -34,6 +34,27 @@
             <div class="card-body">
                 <h5>Laporan pasien dari <strong><?= $tanggal_dari ?></strong> sampai <strong><?= $tanggal_sampai ?></strong></h5>
 
+                <div class="row text-center mb-4">
+                    <div class="col-md-4">
+                        <div class="bg-info text-white p-3 rounded shadow">
+                            <h6>Total Pendaftaran</h6>
+                            <h3><?= $total->total ?></h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-success text-white p-3 rounded shadow">
+                            <h6>Diterima</h6>
+                            <h3><?= $total->diterima ?></h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="bg-danger text-white p-3 rounded shadow">
+                            <h6>Ditolak</h6>
+                            <h3><?= $total->ditolak ?></h3>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="table-responsive">
                     <table id="datatable" class="table table-bordered table-striped">
                         <thead class="thead-dark">
@@ -41,6 +62,7 @@
                                 <th>No</th>
                                 <th>Nama</th>
                                 <th>Tanggal Lahir</th>
+                                <th>Status</th>
                                 <th>Keluhan</th>
                                 <th>Tanggal Kunjungan</th>
                             </tr>
@@ -51,13 +73,14 @@
                                     <td><?= $no++ ?></td>
                                     <td><?= $b->nama ?></td>
                                     <td><?= $b->tgl_lahir ?></td>
+                                    <td><?= $b->kategori ?></td>
                                     <td><?= $b->keluhan ?></td>
                                     <td><?= $b->tgl_kunjungan ?></td>
                                 </tr>
                             <?php endforeach; ?>
                             <?php if (empty($pasien)): ?>
                                 <tr>
-                                    <td colspan="5" class="text-center">Tidak ada data pasien pada rentang tanggal tersebut.</td>
+                                    <td colspan="6" class="text-center">Tidak ada data pasien pada rentang tanggal tersebut.</td>
                                 </tr>
                             <?php endif; ?>
                         </tbody>
