@@ -84,7 +84,7 @@
                       </div>
                       <div class="modal-body">
                         <div class="form-group">
-                          <label>Kategori</label>
+                          <label>Status</label>
                           <select name="kategori" class="form-control">
                             <?php foreach ($kategori_pasien as $k): ?>
                               <option value="<?= $k->kategori; ?>" <?= ($p['kategori'] == $k->kategori) ? 'selected' : ''; ?>>
