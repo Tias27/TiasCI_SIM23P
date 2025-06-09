@@ -42,13 +42,10 @@
         <!-- Form -->
         <form action="<?= base_url('kategori/insert'); ?>" method="POST">
           <div class="form-group">
-        <label for="kategori">Status</label>
-          <select class="form-control" name="kategori" id="kategori" required>
-            <option value="">-- Pilih Status --</option>
-            <option value="Disetujui">Disetujui</option>
-            <option value="Ditolak">Ditolak</option>
-            <option value="Dalam Proses">Dalam Proses</option>
-          </select>
+            <div class="form-group">
+              <label for="kategori">Status</label>
+              <input type="text" class="form-control" name="kategori" id="kategori" placeholder="Status" required>
+            </div>
           </div>
 
           <button type="submit" class="btn btn-primary">Simpan</button>

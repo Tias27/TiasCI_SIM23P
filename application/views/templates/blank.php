@@ -20,21 +20,62 @@
     <section class="content">
 
       <!-- Default box -->
-      <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Title</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
-              <i class="fas fa-minus"></i></button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
-              <i class="fas fa-times"></i></button>
+      <div class="card-body">
+  <div class="row">
+    <!-- Dokter Spesialis -->
+    <div class="col-md-6 mb-4">
+      <div class="card text-white bg-info h-100">
+        <div class="card-body d-flex justify-content-between align-items-start" style="padding-right: 0.5rem;">
+          <div>
+            <h3 class="mb-1"><?= $total_dokter_spesialis; ?></h3>
+            <p class="mb-0">Dokter Spesialis</p>
           </div>
+          <i class="fas fa-user-md fa-3x" style="margin-top: 8px;"></i>
         </div>
-        <div class="card-body">
-          Start creating your amazing application!
+      </div>
+    </div>
+
+    <!-- Total Pasien -->
+    <div class="col-md-6 mb-4">
+      <div class="card text-white bg-success h-100">
+        <div class="card-body d-flex justify-content-between align-items-start" style="padding-right: 0.5rem;">
+          <div>
+            <h3 class="mb-1"><?= $total_pasien; ?></h3>
+            <p class="mb-0">Total Pasien</p>
+          </div>
+          <i class="fas fa-users fa-3x" style="margin-top: 8px;"></i>
         </div>
-        <!-- /.card-body -->
+      </div>
+    </div>
+
+    <!-- Status Diterima -->
+    <div class="col-md-6 mb-4">
+      <div class="card text-white bg-primary h-100">
+        <div class="card-body d-flex justify-content-between align-items-start" style="padding-right: 0.5rem;">
+          <div>
+            <h3 class="mb-1"><?= $status_diterima; ?></h3>
+            <p class="mb-0">Status Diterima</p>
+          </div>
+          <i class="fas fa-check-circle fa-3x" style="margin-top: 8px;"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Status Ditolak -->
+    <div class="col-md-6 mb-4">
+      <div class="card text-white bg-danger h-100">
+        <div class="card-body d-flex justify-content-between align-items-start" style="padding-right: 0.5rem;">
+          <div>
+            <h3 class="mb-1"><?= $status_ditolak; ?></h3>
+            <p class="mb-0">Status Ditolak</p>
+          </div>
+          <i class="fas fa-times-circle fa-3x" style="margin-top: 8px;"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
         <div class="card-footer">
           Footer
         </div>

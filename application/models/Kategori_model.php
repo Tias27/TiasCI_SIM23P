@@ -8,6 +8,10 @@ class Kategori_model extends CI_Model{
     public function get_all() {
         return $this->db->get('kategori_pasien')->result();
     }
+    public function jumlah_status($status) {
+            return $this->db->where('kategori', $status)->from('pasien')->count_all_results();
+        }
+    
     public function insert_kategori($data){
         return $this->db->insert('kategori_pasien',$data);
     }

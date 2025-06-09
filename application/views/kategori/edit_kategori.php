@@ -31,14 +31,11 @@
         </div>
         <div class="box-body">
             <form action="<?= base_url('kategori/update/'. $kategori_pasien['idkategori']);?>" method="POST">
-            <div class="box-body">
-                
+            <div class="box-body">              
                 <div class="form-group">
                     <label for="kategori">Status</label>
                     <input type="text" class="form-control" name="kategori" value="<?= $kategori_pasien['kategori']; ?>" id="kategori" placeholder="Status" required>
-                </div>
-                
-            </div>
+                </div>           
             <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Update</button>
               <a href="<?= base_url('kategori'); ?>" class="btn btn-secondary">Batal</a>

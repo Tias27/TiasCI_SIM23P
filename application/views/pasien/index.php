@@ -57,12 +57,11 @@
                   <td><?= $b['keluhan']; ?></td>
                   <td><?= $b['dokter']; ?></td>
                   <td><?= $b['tgl_kunjungan']; ?></td>
-                  <td>
-                    <a href="<?= base_url('pasien/edit/'. $b['idpasien']); ?>" class="btn btn-sm btn-info">Edit</a>
-                    <a href="<?= base_url('pasien/hapus/'. $b['idpasien']); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Apakah anda yakin hapus?')">Hapus</a>
-
+                  <td style="display: flex; justify-content: center; align-items: center;">
+                  <a href="<?= base_url('pasien/edit/'. $b['idpasien']); ?>" class="btn btn-sm btn-info" title="Edit"><i class="bi bi-pencil"></i></a>
+                  <a href="<?= base_url('pasien/hapus/'. $b['idpasien']); ?>" class="btn btn-sm btn-danger mx-2" onclick="return confirm('Apakah anda yakin hapus?')" title="Hapus"><i class="bi bi-trash"></i></a>
                     <?php if ($this->session->userdata('role') == 'admin') : ?>
-                      <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEdit<?= $b['idpasien']; ?>">Edit Status</button>  
+                      <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#modalEdit<?= $b['idpasien']; ?>" title="Edit Status"><i class="bi bi-sliders"></i></button>  
                     <?php endif; ?>
                   </td>
                 </tr>

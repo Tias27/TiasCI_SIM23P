@@ -20,7 +20,7 @@
   <section class="content">
     <div class="card">
       <div class="card-header">
-        <h3 class="card-title">Form Tambah dokter</h3>
+        <h3 class="card-title">Form Tambah Dokter</h3>
         <div class="card-tools">
           <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>
@@ -42,15 +42,18 @@
         <!-- Form -->
         <form action="<?= base_url('dokter/insert'); ?>" method="POST">
           <div class="form-group">
-        <label for="dokter">Dokter Spesialis</label>
-          <select class="form-control" name="dokter" id="dokter" required>
-            <option value="">-- Pilih dokter --</option>
-            <option value="klinis">Klinis</option>
-            <option value="kebidanan">Kebidanan</option>
-            <option value="diagnostik">Diagnostik</option>
-            <option value="rehabilitas">Rehabilitas</option>
-            <option value="jiwa & mental">Jiwa & Mental</option>
-          </select>
+            <label for="dokter">Dokter Spesialis</label>
+            <input type="text" class="form-control" name="dokter" id="dokter" placeholder="Dokter Spesialis" required>
+          </div>
+
+          <div class="form-group">
+            <label for="hari">Hari Kunjungan</label>
+            <input type="text" class="form-control" name="hari" id="hari" placeholder="Contoh: Senin, Rabu" required>
+          </div>
+
+          <div class="form-group">
+            <label for="jam">Jam Kunjungan</label>
+            <input type="text" class="form-control" name="jam" id="jam" placeholder="Contoh: 09.00 - 12.00" required>
           </div>
 
           <button type="submit" class="btn btn-primary">Simpan</button>

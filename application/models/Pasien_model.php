@@ -33,6 +33,10 @@ class Pasien_model extends CI_Model {
         return $this->db->get_where('pasien', ['idpasien' => $idpasien])->row_array();
     }
 
+    public function jumlah_pasien() {
+        return $this->db->count_all('pasien'); // sesuaikan nama tabel
+    }
+
     public function update_pasien($id, $data) {
         $this->db->where('idpasien', $id);
         return $this->db->update('pasien', $data);
@@ -51,6 +55,9 @@ class Pasien_model extends CI_Model {
         $this->db->where('tgl_kunjungan >=', $tanggal_dari);
         $this->db->where('tgl_kunjungan <=', $tanggal_sampai);
     }
+
+
+    
 
     $this->db->select("
         COUNT(*) as total,

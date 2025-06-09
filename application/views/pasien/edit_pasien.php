@@ -36,13 +36,13 @@
                         <input type="text" class="form-control" name="nama" id="nama" value="<?= $pasien['nama']; ?>" required>
                     </div>
                     <div class="form-group">
-                        <label for="keluhan">Keluhan</label>
-                        <input type="text" class="form-control" name="keluhan" id="keluhan" value="<?= $pasien['keluhan']; ?>" required>
+                        <label for="alamat">Alamat</label>
+                        <input type="text" class="form-control" name="alamat" id="alamat" value="<?= $pasien['alamat']; ?>" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="alamat">Alamat</label>
-                        <textarea class="form-control summernote" name="alamat" id="alamat" required><?= $pasien['alamat']; ?></textarea>
+                        <label for="keluhan">Keluhan</label>
+                        <textarea class="form-control summernote" name="keluhan" id="keluhan" required><?= $pasien['keluhan']; ?></textarea>
                     </div>
 
                     <div class="form-group">
