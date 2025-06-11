@@ -61,7 +61,7 @@ class Pasien_model extends CI_Model {
 
     $this->db->select("
         COUNT(*) as total,
-        SUM(CASE WHEN kategori = 'Diterima' THEN 1 ELSE 0 END) as diterima,
+        SUM(CASE WHEN kategori = 'disetujui' THEN 1 ELSE 0 END) as diterima,
         SUM(CASE WHEN kategori = 'Ditolak' THEN 1 ELSE 0 END) as ditolak
     ");
     $query = $this->db->get('pasien');
